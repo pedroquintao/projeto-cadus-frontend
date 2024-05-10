@@ -1,18 +1,35 @@
 import { Button } from "./components/Button/Button";
+import { Header } from "./components/Header/Header";
 import { UserInput } from "./components/UserInput/UserInput";
+import { List } from "./components/List/List";
 
 function App() {
+
+  const lista = [
+    {
+        id: 1,
+        name: "Naruto"
+    },
+    {
+        id: 2,
+        name: "Boruto"
+    },
+    {
+        id: 3,
+        name: "Charuto"
+    }
+]
+
+
   return (
-    <div style={{
-      // display: 'flex',
-      height: '50px',
-      width: '500px',
-      // margin: 'auto',
-      backgroundColor: 'red'
-    }}>
-        <UserInput />
-        <Button>Ok</Button>
-    </div>
+    <>
+      <Header/>
+      <Form>
+          <UserInput/>
+          <Button>Cadastrar</Button>
+      </Form>
+      <List title={"Usuários Cadastrados"} list={lista}/>
+    </>
   );
 }
 

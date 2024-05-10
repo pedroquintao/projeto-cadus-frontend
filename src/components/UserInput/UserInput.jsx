@@ -1,5 +1,8 @@
-export const UserInput = () => {
+export const UserInput = ({ label }) => {
     return (
-        <><input /></>
+        <>
+            <label>{ label }</label>
+            <input />
+        </>
     )
 }
