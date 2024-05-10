@@ -1,15 +1,14 @@
-export const UserList = ({ title, list }) => {
+export const List = ({ list }) => {
     
     return (
-        <>
-            <h1>{ title }</h1>
             <ul>
-                {list.map(item => {
-                    <li>
-                        { item.name }
-                    </li>
-                })}
+                {list.map(item => { 
+                    return( 
+                        <li>
+                            { item.name }
+                        </li>
+                    )}
+                )}
             </ul>
-        </>
     )
 }

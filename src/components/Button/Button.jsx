@@ -1,5 +1,9 @@
 export const Button = ({ children }) => {
     return (
-        <><button>{ children }</button></>
+        <>
+            <button>
+                { children }
+            </button>
+        </>
     )
 }
