@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { styled } from "styled-components"
 
 const HeaderStyle = styled.header`
@@ -23,10 +24,13 @@ export const Header = () => {
         <HeaderStyle>
                 <UlStyle>
                     <li>
-                        <a href="">CADASTRAR USUÁRIO</a>
+                        <Link to={"/"}>HOME</Link>
                     </li>
                     <li>
-                        <a href="">LISTAR USUÁRIOS</a>
+                        <Link to={"/cadastro"}>CADASTRAR USUÁRIO</Link>
+                    </li>
+                    <li>
+                        <Link to={"/lista"}>LISTAR USUÁRIOS</Link>
                     </li>
                 </UlStyle>
         </HeaderStyle>

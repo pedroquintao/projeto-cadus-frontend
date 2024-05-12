@@ -1,6 +1,4 @@
-import { useContext } from "react"
 import { styled } from "styled-components"
-import { UserContext } from "../../context/UserContext"
 
 const FormStyle = styled.form`
     display: flex;
@@ -11,10 +9,8 @@ const FormStyle = styled.form`
 `
 export const Form = ({ children }) => {
 
-    const { createUser } = useContext(UserContext)
-
     return (
-        <FormStyle onSubmit={createUser}>
+        <FormStyle onSubmit={(e) => e.preventDefault()}>
             { children }
         </FormStyle>
     )
