@@ -2,30 +2,31 @@ import { NavLink } from "react-router-dom"
 import { styled } from "styled-components"
 
 const HeaderStyle = styled.header`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    margin:0;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1;
     width: 100vw;
     height: 86px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
     background-color: ${props => props.theme.colors.white};
     font-weight: 700;
-    font-size: ${props => props.theme.spacing.m};;
-`
+    font-size: ${props => props.theme.spacing.m};
+`;
+
 const UlStyle = styled.ul`
+    position: relative;
     display: flex;
     justify-content: end;
     align-items: center;
     width: 100%;
-    position: relative;
     padding: 0 16vw;
     margin: 0;
-`
+`;
 
 const LinkStyle = styled(NavLink)`
     display: block;
@@ -35,14 +36,13 @@ const LinkStyle = styled(NavLink)`
     color: inherit;
 
     &:hover {
-        color: ${props => props.theme.colors.aquaHover}
+        color: ${props => props.theme.colors.aquaHover};
     }
 
     &.active {
         color: ${props => props.theme.colors.aquaHover};
     }
-    
-`
+`;
 
 const LiStyle = styled.li`
     list-style-type: none;

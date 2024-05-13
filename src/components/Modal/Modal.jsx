@@ -11,10 +11,11 @@ const BackdropStyle = styled.div`
     height: 100vh;
     width: 100vw;
     background-color: rgba(0, 0, 0, 0.5);
+
     &:hover {
         background-color: rgba(0, 0, 0, 0.7);
     }
-`
+`;
 
 const ModalBoxStyle = styled.div`
     position: fixed;
@@ -23,13 +24,14 @@ const ModalBoxStyle = styled.div`
     width: 500px;
     height: 500px;
     display: flex;
-    border-radius: 16px;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     transform: translate(-50%, -50%);
     z-index: 3;
+    border-radius: 16px;
     background-color: ${props => props.theme.colors.white};
-`
+`;
 
 const CloseButtonStyle = styled.div`
     display: flex;
@@ -40,11 +42,13 @@ const CloseButtonStyle = styled.div`
     width: 5rem;
     height: 5rem;
     font-size: 5rem;
+
     &:hover {
         color: ${props => props.theme.colors.blueHover};
         cursor: pointer;
     }
-`
+`;
+
 const TextAreaStyle = styled.div`
     display: flex;
     justify-content: center;
@@ -52,15 +56,17 @@ const TextAreaStyle = styled.div`
     text-align: center;
     padding: 0 2em;
     flex-grow: 2;
-`
+    font-size: ${props => props.$fontSize};
+`;
+
 const ButtonAreaStyle = styled.div`
     display: flex;
     justify-content: center;
     align-items: start;
     flex-grow: 1;
-`
+`;
 
-export const Modal = ({children}) => {
+export const Modal = ({children, $fontSize}) => {
 
     const { closeModal } = useContext(ModalContext)
 
@@ -70,7 +76,7 @@ export const Modal = ({children}) => {
             <CloseButtonStyle onClick={closeModal}>
                 &times;
             </CloseButtonStyle>
-            <TextAreaStyle>
+            <TextAreaStyle $fontSize={$fontSize}>
                 {children}
             </TextAreaStyle>
             <ButtonAreaStyle>
