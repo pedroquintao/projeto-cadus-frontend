@@ -3,6 +3,8 @@ import { Button } from "../components/Button/Button"
 import { Row} from "react-grid-system"
 import { useContext } from "react"
 import { ThemeContext } from "styled-components"
+import { Modal } from "../components/Modal/Modal"
+import { ModalContext } from "../contexts/ModalContext"
 
 export const MainPage = () => {
 
@@ -17,9 +19,10 @@ export const MainPage = () => {
                     <Button>CADASTRO</Button>
                 </Link>
                 <Link to={"/lista"}>
-                    <Button $secundary='true' >LISTA</Button>
+                    <Button $secundary='true'>LISTA</Button>
                 </Link>
             </Row>
+
         </>
     )
 }

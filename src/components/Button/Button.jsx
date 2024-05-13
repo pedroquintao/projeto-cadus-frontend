@@ -4,7 +4,7 @@ const ButtonStyle = styled.button`
     box-sizing: border-box;
     background-color: ${props => (props.$secundary? props.theme.colors.blue : props.theme.colors.aqua)};
     color: white;
-    min-width: 300px;
+    min-width: 250px;
     border-radius: 999px;
     padding: 1em 4em;
     box-sizing: border-box;
