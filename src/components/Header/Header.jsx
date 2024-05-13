@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import { styled } from "styled-components"
 
 const HeaderStyle = styled.header`
@@ -6,32 +6,62 @@ const HeaderStyle = styled.header`
     justify-content: center;
     align-items: center;
     padding: 0;
-    position: absolute;
+    margin:0;
+    position: fixed;
     top: 0;
-    z-index: 2;
+    left: 0;
+    z-index: 1;
     width: 100vw;
-    background-color: black;
+    height: 86px;
+    background-color: ${props => props.theme.colors.white};
+    font-weight: 700;
+    font-size: ${props => props.theme.spacing.m};;
 `
 const UlStyle = styled.ul`
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
     position: relative;
-    gap: 200px;
+    padding: 0 16vw;
+    margin: 0;
 `
+
+const LinkStyle = styled(NavLink)`
+    display: block;
+    text-align: center;
+    padding: 1em;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+        color: ${props => props.theme.colors.aquaHover}
+    }
+
+    &.active {
+        color: ${props => props.theme.colors.aquaHover};
+    }
+    
+`
+
+const LiStyle = styled.li`
+    list-style-type: none;
+`
+
 export const Header = () => {
 
     return (
         <HeaderStyle>
                 <UlStyle>
-                    <li>
-                        <Link to={"/"}>HOME</Link>
-                    </li>
-                    <li>
-                        <Link to={"/cadastro"}>CADASTRAR USUÁRIO</Link>
-                    </li>
-                    <li>
-                        <Link to={"/lista"}>LISTAR USUÁRIOS</Link>
-                    </li>
+                    <LiStyle>
+                        <LinkStyle to={"/"} title="Tela Inicial">HOME</LinkStyle>
+                    </LiStyle>
+                    <LiStyle>
+                        <LinkStyle to={"/cadastro"} title="Tela de Cadastro">CADASTRAR USUÁRIO</LinkStyle>
+                    </LiStyle>
+                    <LiStyle>
+                        <LinkStyle to={"/lista"} title="Lista de Usuários">LISTAR USUÁRIOS</LinkStyle>
+                    </LiStyle>
                 </UlStyle>
         </HeaderStyle>
     )

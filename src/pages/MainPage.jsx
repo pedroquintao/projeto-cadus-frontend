@@ -1,19 +1,25 @@
 import { Link } from "react-router-dom"
 import { Button } from "../components/Button/Button"
+import { Row} from "react-grid-system"
+import { useContext } from "react"
+import { ThemeContext } from "styled-components"
 
 export const MainPage = () => {
+
+    const theme = useContext(ThemeContext)
+
     return (
         <>
-            <h1>Bem vindo ao Gerenciador de Usuários!</h1>
-            <p>Você deseja cadastrar um novo usuário, ou visualizar a lista de usuários cadastrados?</p>
-            <div>
+            <h1>Bem vindo ao GERENCIADOR DE USUÁRIOS!</h1>
+            <p>Deseja cadastrar um novo usuário, ou visualizar a lista de usuários cadastrados?</p>
+            <Row justify='center' align='center' style={{ gap: theme.spacing.xl, marginTop: theme.spacing.xl }}>
                 <Link to={"/cadastro"}>
-                    <Button>Cadastrar Usuários</Button>
+                    <Button>CADASTRO</Button>
                 </Link>
                 <Link to={"/lista"}>
-                    <Button>Listar Usuários</Button>
+                    <Button $secundary='true' >LISTA</Button>
                 </Link>
-            </div>
+            </Row>
         </>
     )
 }

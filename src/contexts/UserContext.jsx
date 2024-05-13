@@ -23,11 +23,8 @@ export const UserContextProvider = ({ children }) => {
 }
     const createUser = async (e) => {
         e.preventDefault();
-        // console.log(userName)
         const userData = { "name": `${userName}` };
-        
-        console.log(userData)
-        
+                
         await api.post("http://localhost:8080/users", userData)
         .then(res => {
             console.log("Usuário: ", userName, " Cadastrado com Sucesso!\nA lista atualizada de usuários é: \n", res.data);
@@ -50,11 +47,7 @@ export const UserContextProvider = ({ children }) => {
     
     const getUsers = async () => {
         await api.get("http://localhost:8080/users")
-        .then(res => {console.table(res.data);
-            setUserList(res.data)
-            setFiltredList(res.data);
-        })
-        
+        .then(res => { setUserList(res.data); setFiltredList(res.data); })
         .catch(err => {
                 if(err.response) {
                     console.error("Erro ao adquirir a lista de usuários: ", err.response)
@@ -82,12 +75,6 @@ export const UserContextProvider = ({ children }) => {
             setFiltredList,
             handleFilterChange
         }
-        
-        // useEffect(() => {console.log('FILTRADA:', filtredList)}, [filtredList])
-        // useEffect(() => {console.log('USERLIST:', userList)}, [userList])
-        useEffect(() => {console.log('Filtro:', filterUser())}, [userFilter])
-
-
 
     return (
         <UserContext.Provider value={context}>

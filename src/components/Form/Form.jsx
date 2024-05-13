@@ -5,7 +5,6 @@ const FormStyle = styled.form`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: red;
 `
 export const Form = ({ children }) => {
 

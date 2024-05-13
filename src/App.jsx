@@ -1,14 +1,19 @@
 import { RouterProvider } from "react-router-dom";
 import { router } from "./router/router";
-import { UserContextProvider } from "./context/UserContext";
-
+import { UserContextProvider } from "./contexts/UserContext";
+import { ThemeProvider } from 'styled-components';
+import { theme } from "./themes/theme";
+import GlobalStyle from "./themes/globalStyle";
 
 function App() {
 
   return (
     <>
       <UserContextProvider>
-        <RouterProvider router={router} />
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <RouterProvider router={router} />
+        </ThemeProvider>
       </UserContextProvider>
     </>
   );
