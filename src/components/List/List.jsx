@@ -24,12 +24,14 @@ import styled from "styled-components"
         padding: 0.5em 1em;
         margin: 0;
         border: 1px solid ${props => props.theme.colors.lightGray};
-        border-radius: 16px;
+        border-left: 12px solid ${props => props.theme.colors.blueHover};
+        border-radius: 0 16px 16px 16px;
         transition: border-color 0.4s ease-in;
         transition: color 0.2s ease-in;
         font-size: ${props => props.theme.spacing.xm};
         overflow: hidden;
         text-overflow: ellipsis;
+        
     `
 
 export const List = ({ list, style }) => {
