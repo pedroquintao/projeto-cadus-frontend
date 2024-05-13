@@ -61,6 +61,7 @@ export const UserContextProvider = ({ children }) => {
             })
         }
         
+        useEffect(() => {filterUser()},[userFilter])
         const context = { userName,
             setUserName,
             userList,
