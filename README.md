@@ -5,10 +5,15 @@ Este é o frontend do projeto Genus, uma página web desenvolvida em ReactJS que
 ## Tecnologias Utilizadas
 
 - ReactJS: Biblioteca JavaScript para construção de interfaces de usuário.
+  - Versão: ^18.3.1
 - Styled Components: Biblioteca para estilização de componentes React com CSS-in-JS.
+  - Versão: ^6.1.10
 - React Router Dom: Biblioteca para gerenciamento de rotas no React.
+  - Versão: ^6.23.1
 - React Grid System: Sistema de grid para posicionamento de elementos nas telas.
+  - Versão: ^8.2.0
 - Axios: Cliente HTTP baseado em Promises para fazer requisições HTTP.
+  - Versão: ^1.6.8
 
 ## Como Executar o Projeto
 
@@ -23,7 +28,7 @@ git clone https://github.com/seu-usuario/projeto-genus-frontend.git
 ```
 npm install
 ```
-ou
+  ou
 ```
 yarn install
 ```
@@ -33,7 +38,7 @@ yarn install
 ```
 npm start
 ```
-ou
+  ou
 ```
 yarn start
 ```
