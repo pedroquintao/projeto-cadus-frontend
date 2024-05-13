@@ -10,7 +10,7 @@ export const UserRegistration = () => {
     const { createUser, userName, setUserName, handleNameChange  } = useContext(UserContext)
     const theme = useContext(ThemeContext)
 
-    useEffect(() => {setUserName('')}, [])
+    useEffect(() => {setUserName('')}, [setUserName])
     
     return (
             <>

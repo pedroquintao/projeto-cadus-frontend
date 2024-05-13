@@ -1,6 +1,3 @@
-import React from 'react';
-
-
 export const theme = {
     colors: {
         darkBlue: "#1B2B5C",

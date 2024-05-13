@@ -21,9 +21,10 @@ export const UserContextProvider = ({ children }) => {
         setUserFilter(event.target.value);
     }
 
-    const filterUser = () => {
+    const handleFilterUser = () => {
         setFiltredList(userList.filter(user => user.name.toLowerCase().includes(userFilter.toLowerCase())))
-}
+    }
+
     const createUser = async (e) => {
         e.preventDefault();
         const userData = { "name": `${userName}` };
@@ -67,24 +68,25 @@ export const UserContextProvider = ({ children }) => {
                     console.error("Erro: ", err.message)
                 }
             })
-        }
+    }
         
-        useEffect(() => {filterUser()},[userFilter])
+    useEffect(() => {handleFilterUser()},[userFilter])
 
-        const context = { userName,
-            setUserName,
-            userList,
-            setUserList,
-            handleNameChange,
-            getUsers,
-            createUser,
-            userFilter,
-            setUserFilter,
-            filterUser,
-            filtredList,
-            setFiltredList,
-            handleFilterChange
-        }
+    const context = { 
+        userName,
+        setUserName,
+        userList,
+        setUserList,
+        userFilter,
+        setUserFilter,
+        filtredList,
+        setFiltredList,
+        handleNameChange,
+        handleFilterChange,
+        handleFilterUser,
+        createUser,
+        getUsers
+    }
 
     return (
         <UserContext.Provider value={context}>

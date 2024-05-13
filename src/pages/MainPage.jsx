@@ -3,8 +3,6 @@ import { Button } from "../components/Button/Button"
 import { Row} from "react-grid-system"
 import { useContext } from "react"
 import { ThemeContext } from "styled-components"
-import { Modal } from "../components/Modal/Modal"
-import { ModalContext } from "../contexts/ModalContext"
 
 export const MainPage = () => {
 

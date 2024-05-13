@@ -5,13 +5,11 @@ import { Input } from "../components/Input/Input";
 import { ThemeContext } from "styled-components";
 
 export const UserList = () => {
+
     const { getUsers, filtredList, userFilter, setUserFilter, handleFilterChange } = useContext(UserContext);
     const theme = useContext(ThemeContext);
 
-    useEffect(() => {
-        setUserFilter('');
-        getUsers();
-    }, []);
+    useEffect(() => { setUserFilter(''); getUsers(); }, []);
 
     return (
             <>
