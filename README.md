@@ -20,7 +20,7 @@ Este é o frontend do projeto Genus, uma página web desenvolvida em ReactJS que
 1. Clone este repositório:
 
 ```
-git clone https://github.com/seu-usuario/projeto-genus-frontend.git
+git clone https://github.com/pedroquintao/projeto-genus-frontend.git
 ```
 
 2. Instale as dependências utilizando npm ou yarn:
