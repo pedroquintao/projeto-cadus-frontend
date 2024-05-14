@@ -58,7 +58,7 @@ export const List = ({ list, style }) => {
                             <LiStyle key={index}>
                                 { item.name }
                             </LiStyle>)}) : 
-                            <TextStyle>Não há usuários cadastrados no momento</TextStyle>
+                            <TextStyle>Não existem usuários cadastrados no momento</TextStyle>
                         }
             </UlStyle>
     )
