@@ -32,10 +32,10 @@ export const UserContextProvider = ({ children }) => {
             console.log("Usuário cadastrado com sucesso!");
             setUserName('');
             setFiltredList(res.data);
-            openModal('O usuário foi cadastrado com sucesso!');
+            openModal(`Usuário ${userName} cadastrado com sucesso!`);
         } catch (err) {
             setUserName('');
-            openModal('Erro ao cadastrar usuário!');
+            openModal(`Erro ao cadastrar usuário ${userName}!`);
             console.error("Erro ao cadastrar usuário: ", err);
         }
     };
@@ -47,6 +47,7 @@ export const UserContextProvider = ({ children }) => {
             setFiltredList(res.data);
         } catch (err) {
             console.error("Erro ao adquirir a lista de usuários: ", err);
+            openModal(`Erro ao adquirir a lista de usuários:`);
         }
     };
 

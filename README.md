@@ -5,15 +5,15 @@ Este é o frontend do projeto Genus, uma página web desenvolvida em ReactJS que
 ## Tecnologias Utilizadas
 
 - ReactJS: Biblioteca JavaScript para construção de interfaces de usuário.
-  - Versão: ^18.3.1
-- Styled Components: Biblioteca para estilização de componentes React com CSS-in-JS.
-  - Versão: ^6.1.10
+  [![ReactJS](https://img.shields.io/badge/ReactJS-^18.3.1-blue.svg)](https://reactjs.org/)
+- Styled Components: Biblioteca para estilização de componentes React.
+  [![Styled Components](https://img.shields.io/badge/Styled%20Components-^6.1.10-orange.svg)](https://styled-components.com/)
 - React Router Dom: Biblioteca para gerenciamento de rotas no React.
-  - Versão: ^6.23.1
+  [![React Router Dom](https://img.shields.io/badge/React%20Router%20Dom-^6.23.1-green.svg)](https://reactrouter.com/)
 - React Grid System: Sistema de grid para posicionamento de elementos nas telas.
-  - Versão: ^8.2.0
-- Axios: Cliente HTTP baseado em Promises para fazer requisições HTTP.
-  - Versão: ^1.6.8
+  [![React Grid System](https://img.shields.io/badge/React%20Grid%20System-^8.2.0-red.svg)](https://github.com/sealninja/react-grid-system)
+- Axios: Biblioteca JavaScript para fazer requisições HTTP.
+  [![Axios](https://img.shields.io/badge/Axios-^1.6.8-yellow.svg)](https://axios-http.com/)
 
 ## Como Executar o Projeto
 

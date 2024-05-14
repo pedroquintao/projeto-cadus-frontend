@@ -13,20 +13,23 @@ export const UserList = () => {
         getUsers();
     }, []);
 
-    const headerStyle = {
-        color: theme.colors.darkGray
-    };
+    const devStyle = {
+        transform: 'translateY(-15vh)', 
+        position: 'relative'
+    }
 
-    const inputStyle = {
-        marginBottom: theme.spacing.xl
+    const pStyle = {
+        color: theme.colors.darkGray
     };
 
     return (
         <>
+        <div style={devStyle}>
             <h1>LISTA DE USUÁRIOS</h1>
-            <p style={headerStyle}>Utilize o filtro para obter os usuários desejados:</p>
-            <Input style={inputStyle} onChange={handleFilterChange} value={userFilter} placeholder={'Filtrar'} />
+            <p style={pStyle}>Utilize o filtro para obter os usuários desejados:</p>
+            <Input onChange={handleFilterChange} value={userFilter} placeholder={'Filtrar'} />
             <List list={filtredList} />
+        </div>
         </>
     );
 };

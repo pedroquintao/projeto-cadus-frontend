@@ -21,11 +21,13 @@ const ModalBoxStyle = styled.div`
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 500px;
-    height: 500px;
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    max-height: 500px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     transform: translate(-50%, -50%);
     z-index: 3;
@@ -55,14 +57,16 @@ const TextAreaStyle = styled.div`
     align-items: center;
     text-align: center;
     padding: 0 2em;
-    flex-grow: 2;
+    flex-grow: 1;
     font-size: ${props => props.$fontSize};
 `;
 
 const ButtonAreaStyle = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: start;
+    gap: 1em;
     flex-grow: 1;
 `;
 
@@ -80,7 +84,8 @@ export const Modal = ({children, $fontSize}) => {
                 {children}
             </TextAreaStyle>
             <ButtonAreaStyle>
-                <Button onClick={closeModal}>OK</Button>
+                <Button onClick={closeModal} $secundary={'true'}>OK</Button>
+                <Button onClick={closeModal}>IR PARA LISTA</Button>
             </ButtonAreaStyle>
         </ModalBoxStyle>
         <BackdropStyle onClick={closeModal} />

@@ -18,19 +18,22 @@ export const BaseLayout = () => {
 
     const rowStyle = {
         minHeight: '100vh',
-        justifyContent: 'center',
-        alignItems: 'center'
+        textAlign: 'center'
+        // paddingTop: '15vh'
+       
     };
 
     return (
-        <Container style={containerStyle}>
-            <Row style={rowStyle} justify="center" align="center" >
-                <Col xs={12} sm={12} md={8} lg={8} xl={8}>
-                    <Header/>
-                    <Outlet />
-                    { modalVisibility && <Modal $fontSize={`${theme.spacing.l}`}>{ modalText }</Modal>}
-                </Col>
-            </Row>
-        </Container>
+            <>
+                <Header/>
+                <Container style={containerStyle}>
+                    <Row style={rowStyle} justify="center" align="center" >
+                        <Col xs={12} sm={12} md={8} lg={8} xl={8}>
+                            <Outlet />
+                        </Col>
+                    </Row>
+                </Container>
+                { modalVisibility && <Modal $fontSize={`${theme.spacing.l}`}>{ modalText }</Modal>}
+            </>
     )
 }
