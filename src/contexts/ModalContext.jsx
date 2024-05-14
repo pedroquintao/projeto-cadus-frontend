@@ -4,19 +4,19 @@ export const ModalContext = createContext();
 
 export const ModalContextProvider = ( { children } ) => {
     const [modalVisibility, setModalVisibility] = useState(false)
-    const [modalText, setModalText] = useState('')
+    const [modalData, setModalData] = useState('')
 
-    const openModal = (text) => {
-        setModalText(text);
+    const openModal = (data) => {
+        setModalData(data);
         setModalVisibility(true);
     } 
 
     const closeModal = () => {
-        setModalText('');
+        setModalData('');
         setModalVisibility(false);
     } 
 
-    const context = { modalVisibility, setModalVisibility, modalText, openModal, closeModal }
+    const context = { modalVisibility, setModalVisibility, modalData, openModal, closeModal }
 
     return (
         <ModalContext.Provider value={context}>

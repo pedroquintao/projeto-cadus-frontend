@@ -9,7 +9,7 @@ import { Modal } from "../components/Modal/Modal"
 export const BaseLayout = () => {
 
     const theme = useContext(ThemeContext)
-    const { modalVisibility, modalText } = useContext(ModalContext)
+    const { modalVisibility, modalData } = useContext(ModalContext)
 
     const containerStyle = {
         backgroundColor: theme.colors.white,
@@ -18,9 +18,7 @@ export const BaseLayout = () => {
 
     const rowStyle = {
         minHeight: '100vh',
-        textAlign: 'center'
-        // paddingTop: '15vh'
-       
+        textAlign: 'center'       
     };
 
     return (
@@ -33,7 +31,7 @@ export const BaseLayout = () => {
                         </Col>
                     </Row>
                 </Container>
-                { modalVisibility && <Modal $fontSize={`${theme.spacing.l}`}>{ modalText }</Modal>}
+                { modalVisibility && <Modal $fontSize={`${theme.spacing.l}`}>{ modalData.message }</Modal>}
             </>
     )
 }

@@ -73,7 +73,7 @@ const ButtonAreaStyle = styled.div`
 
 export const Modal = ({children, $fontSize}) => {
 
-    const { closeModal } = useContext(ModalContext)
+    const { modalData, closeModal  } = useContext(ModalContext)
 
     return (
     <>
@@ -85,12 +85,14 @@ export const Modal = ({children, $fontSize}) => {
                 {children}
             </TextAreaStyle>
             <ButtonAreaStyle>
-                <Link to={"/cadastro"}>
-                    <Button onClick={closeModal} $secundary={'true'}>OK</Button>
-                </Link>
-                <Link to={"lista"}>
-                    <Button onClick={closeModal}>IR PARA LISTA</Button>
-                </Link>
+                {modalData.primaryButtonText &&
+                    <Link to={modalData.primaryButtonLink}>
+                        <Button onClick={closeModal} >{modalData.primaryButtonText}</Button>
+                    </Link>}
+                {modalData.secundaryButtonText && 
+                    <Link to={modalData.secundaryButtonLink}>
+                        <Button onClick={closeModal} $secundary={'true'}>{modalData.secundaryButtonText}</Button>
+                    </Link>}
             </ButtonAreaStyle>
         </ModalBoxStyle>
         <BackdropStyle onClick={closeModal} />
