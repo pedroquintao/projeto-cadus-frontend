@@ -52,8 +52,14 @@ const TextStyle = styled.p`
 export const List = ({ list, style }) => {
     
     return (
-            <UlStyle style={style} >
-                {list[0] ? [...list].reverse().map((item, index) => { return( <LiStyle key={index}>{ item.name }</LiStyle>)}) : <TextStyle>Lista de usuários vazia</TextStyle>}
+            <UlStyle style={style} >{
+                list[0] ? [...list].reverse().map((item, index) => { 
+                    return( 
+                            <LiStyle key={index}>
+                                { item.name }
+                            </LiStyle>)}) : 
+                            <TextStyle>Não há usuários cadastrados no momento</TextStyle>
+                        }
             </UlStyle>
     )
 }
