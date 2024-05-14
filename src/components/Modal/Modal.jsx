@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { Button } from "../Button/Button"
 import { useContext } from "react"
 import { ModalContext } from "../../contexts/ModalContext"
+import { Link } from "react-router-dom";
 
 const BackdropStyle = styled.div`
     position: fixed;
@@ -84,8 +85,12 @@ export const Modal = ({children, $fontSize}) => {
                 {children}
             </TextAreaStyle>
             <ButtonAreaStyle>
-                <Button onClick={closeModal} $secundary={'true'}>OK</Button>
-                <Button onClick={closeModal}>IR PARA LISTA</Button>
+                <Link to={"/cadastro"}>
+                    <Button onClick={closeModal} $secundary={'true'}>OK</Button>
+                </Link>
+                <Link to={"lista"}>
+                    <Button onClick={closeModal}>IR PARA LISTA</Button>
+                </Link>
             </ButtonAreaStyle>
         </ModalBoxStyle>
         <BackdropStyle onClick={closeModal} />
