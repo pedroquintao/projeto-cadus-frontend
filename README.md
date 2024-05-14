@@ -23,7 +23,22 @@ Este é o frontend do projeto Genus, uma página web desenvolvida em ReactJS que
 git clone https://github.com/pedroquintao/projeto-genus-frontend.git
 ```
 
-2. Instale as dependências utilizando npm ou yarn:
+2. Instale o NVM (Node Version Manager) (caso não tenha instalado):
+
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+```
+
+3. Instale a versão do Node.JS especificada no arquivo .nvmrc:
+
+```
+nvm install
+```
+
+> Observação: Se você já possuir instalada a versão do Node.JS igual a versão do projeto, quando executar o nvm install a versão atual do seu Node.JS apenas será alterada para a versão que está incluída no arquivo .nvmrc.
+> Para ativar automaticamente a versão do Node.js especificada no arquivo `.nvmrc`, basta navegar até o diretório do projeto e executar o comando `nvm use`. Por exemplo:
+
+4. Instale as dependências utilizando npm ou yarn:
 
 ```
 npm install
@@ -33,7 +48,7 @@ npm install
 yarn install
 ```
 
-3. Execute o projeto:
+5. Execute o projeto:
 
 ```
 npm start
