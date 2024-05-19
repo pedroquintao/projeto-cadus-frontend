@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { ActionBar } from "../AcrtionBar/ActionBar";
 
 const UlStyle = styled.ul`
     display: flex;
@@ -18,22 +19,23 @@ const UlStyle = styled.ul`
 
 const LiStyle = styled.li`
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    gap: ${props => props.theme.spacing.s};
     width: 100%;
-    min-height: 2.5em;
+    max-height: 10vh;
     list-style: none;
-    padding: 0.5em 1em;
+    padding: 0.5em;
     margin: 0;
     border: 1px solid ${props => props.theme.colors.lightGray};
     border-left: 12px solid ${props => props.theme.colors.blue};
     border-radius: 0 16px 16px 16px;
-    font-size: ${props => props.theme.spacing.xm};
-    overflow: hidden;
     text-align: left;
-    text-overflow: ellipsis;
+    
     box-sizing: border-box;
     transition: color 0.2s ease-in;
+
+    /* background-color: yellow; */
 
 
     &:hover {
@@ -41,6 +43,19 @@ const LiStyle = styled.li`
         border-left-color: ${props => props.theme.colors.blueHover};
     }
 `;
+
+const PStyle = styled.p`
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: ${props => props.theme.spacing.xm};
+    
+    /* background-color: blue; */
+    &:hover {
+        overflow-x: auto;
+    }
+
+`
 
 const TextStyle = styled.p`
     color: ${props => props.theme.colors.lightGray};
@@ -53,10 +68,11 @@ export const List = ({ list, style }) => {
     
     return (
             <UlStyle style={style} >{
-                list[0] ? [...list].reverse().map((item, index) => { 
+                list[0] ? [...list].reverse().map((user, index) => { 
                     return( 
-                            <LiStyle key={index}>
-                                { item.name }
+                            <LiStyle key={index} _id={user._id}>
+                                <PStyle>{ user.name }</PStyle>
+                                <ActionBar user={user}/>
                             </LiStyle>)}) : 
                             <TextStyle>Não existem usuários cadastrados no momento</TextStyle>
                         }

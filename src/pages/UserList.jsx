@@ -24,12 +24,12 @@ export const UserList = () => {
 
     return (
         <>
-        <div style={devStyle}>
-            <h1 >LISTA DE USUÁRIOS</h1>
-            <p style={pStyle}>Digite no campo abaixo para filtrar a lista de usuários:</p>
-            <Input onChange={handleFilterChange} value={userFilter} placeholder={'Filtrar'} />
-            <List list={filtredList} />
-        </div>
+            <div style={devStyle}>
+                <h1 >LISTA DE USUÁRIOS</h1>
+                <p style={pStyle}>Digite no campo abaixo para filtrar a lista de usuários:</p>
+                <Input onChange={handleFilterChange} value={userFilter} placeholder={'Filtrar'} />
+                <List list={filtredList} />
+            </div>
         </>
     );
 };

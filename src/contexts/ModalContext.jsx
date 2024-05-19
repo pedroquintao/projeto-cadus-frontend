@@ -16,7 +16,12 @@ export const ModalContextProvider = ( { children } ) => {
         setModalVisibility(false);
     } 
 
-    const context = { modalVisibility, setModalVisibility, modalData, openModal, closeModal }
+    const context = { modalVisibility, 
+                      setModalVisibility, 
+                      modalData, 
+                      setModalData, 
+                      openModal, 
+                      closeModal }
 
     return (
         <ModalContext.Provider value={context}>

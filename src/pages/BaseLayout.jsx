@@ -9,7 +9,7 @@ import { Modal } from "../components/Modal/Modal"
 export const BaseLayout = () => {
 
     const theme = useContext(ThemeContext)
-    const { modalVisibility, modalData } = useContext(ModalContext)
+    const { modalVisibility, modalData, openModal } = useContext(ModalContext)
 
     const containerStyle = {
         backgroundColor: theme.colors.white,

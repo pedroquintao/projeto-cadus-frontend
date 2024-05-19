@@ -54,6 +54,7 @@ const CloseButtonStyle = styled.div`
 
 const TextAreaStyle = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -82,7 +83,7 @@ export const Modal = ({children, $fontSize}) => {
                 &times;
             </CloseButtonStyle>
             <TextAreaStyle $fontSize={$fontSize}>
-                {children}
+                { children }
             </TextAreaStyle>
             <ButtonAreaStyle>
                 {modalData.primaryButtonText &&
