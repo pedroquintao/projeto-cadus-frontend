@@ -3,6 +3,8 @@ import { Button } from "../Button/Button"
 import { useContext } from "react"
 import { ModalContext } from "../../contexts/ModalContext"
 import { Link } from "react-router-dom";
+import { UserContext } from "../../contexts/UserContext";
+import { Input } from "../Input/Input";
 
 const BackdropStyle = styled.div`
     position: fixed;
@@ -19,6 +21,7 @@ const BackdropStyle = styled.div`
 `;
 
 const ModalBoxStyle = styled.div`
+    padding: 1em;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -59,22 +62,23 @@ const TextAreaStyle = styled.div`
     align-items: center;
     text-align: center;
     padding: 0 2em;
-    flex-grow: 1;
+    flex-grow: 3;
     font-size: ${props => props.$fontSize};
 `;
 
 const ButtonAreaStyle = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: start;
+    justify-content: start;
+    align-items: center;
     gap: 1em;
     flex-grow: 1;
 `;
 
 export const Modal = ({children, $fontSize}) => {
 
-    const { modalData, closeModal  } = useContext(ModalContext)
+    const { modalData, closeModal  } = useContext(ModalContext);
+    const { updateUserInput, handleUpdateInputChange, updateUser} = useContext(UserContext);
 
     return (
     <>
@@ -94,7 +98,15 @@ export const Modal = ({children, $fontSize}) => {
                     <Link to={modalData.secundaryButtonLink}>
                         <Button onClick={closeModal} $secundary={'true'}>{modalData.secundaryButtonText}</Button>
                     </Link>}
-            </ButtonAreaStyle>
+                {modalData.updateButtonText && 
+                    <>
+                        <Input onChange={handleUpdateInputChange} value={updateUserInput}/>
+                        <Link to={modalData.updateButtonLink}>
+                            <Button onClick={() => {console.log('ID: ',modalData.user._id); updateUser(modalData.user)}} $secundary={'true'}>{modalData.updateButtonText}</Button>
+                        </Link>
+                    </>
+                }
+                </ButtonAreaStyle>
         </ModalBoxStyle>
         <BackdropStyle onClick={closeModal} />
     </>

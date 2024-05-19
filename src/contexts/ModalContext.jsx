@@ -3,6 +3,7 @@ import { createContext, useState } from "react";
 export const ModalContext = createContext();
 
 export const ModalContextProvider = ( { children } ) => {
+    
     const [modalVisibility, setModalVisibility] = useState(false)
     const [modalData, setModalData] = useState('')
 

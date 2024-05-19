@@ -34,6 +34,17 @@ const LiStyle = styled.li`
     
     box-sizing: border-box;
     transition: color 0.2s ease-in;
+    transition: display 1s ease-in;
+
+
+    &:hover .kebab-btn {
+        display: none;
+    }
+    
+    &:hover .edit-btn,
+    &:hover .delete-btn {
+        display: block;
+    }
 
     /* background-color: yellow; */
 

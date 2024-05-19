@@ -3,9 +3,13 @@ import { List } from "../components/List/List";
 import { Input } from "../components/Input/Input";
 import { UserContext } from "../contexts/UserContext";
 import { ThemeContext } from "styled-components";
+import { Modal } from "../components/Modal/Modal";
+import { Button } from "../components/Button/Button";
+import { ModalContext } from "../contexts/ModalContext";
 
 export const UserList = () => {
-    const { userFilter, setUserFilter, filtredList, handleFilterChange, getUsers } = useContext(UserContext);
+    const { userFilter, setUserFilter, filtredList, handleFilterChange, getUsers, updateUserInput, setUpdateUserInput, updateUser } = useContext(UserContext);
+    const { modalVisibility } = useContext(ModalContext)
     const theme = useContext(ThemeContext);
 
     useEffect(() => {
