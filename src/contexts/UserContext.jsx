@@ -1,9 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import api from "../services/api";
 import { ModalContext } from "./ModalContext";
-import { Form } from "../components/Form/Form";
-import { Input } from "../components/Input/Input";
-import { Button } from "../components/Button/Button";
 
 export const UserContext = createContext();
 
@@ -39,7 +36,6 @@ export const UserContextProvider = ({ children }) => {
                     updateButtonLink: '/lista',
                     user: user
         }
-        console.log(modalData.user._id)
         return modalData
     }
 
@@ -47,16 +43,11 @@ export const UserContextProvider = ({ children }) => {
         e.preventDefault();
         let modalData = {
             message: `Carregando...`,
-            // primaryButtonText: false,
-            // primaryButtonLink: false,
-            // secundaryButtonText: false,
-            // secundaryButtonLink: false
         }
         openModal(modalData);
         try {
             const userData = { name: userName };
             const res = await api.post("http://localhost:8080/users", userData);
-            console.log("Usuário cadastrado com sucesso!");
             setUserName('');
             setFiltredList(res.data);
 
@@ -74,8 +65,6 @@ export const UserContextProvider = ({ children }) => {
                 message: `Erro ao cadastrar usuário ${userName}!`,
                 primaryButtonText: 'OK',
                 primaryButtonLink: '/cadastro',
-                // secundaryButtonText: false,
-                // secondaryButtonLink: false
             }
             openModal(modalData);
             console.error("Erro ao cadastrar usuário: ", err);
@@ -85,10 +74,7 @@ export const UserContextProvider = ({ children }) => {
     const getUsers = async () => {
         let modalData = {
             message: `Carregando...`,
-            // primaryButtonText: false,
-            // primaryButtonLink: false,
-            // secundaryButtonText: false,
-            // secondaryButtonLink: false
+
         }
         openModal(modalData);
         try {
@@ -101,14 +87,11 @@ export const UserContextProvider = ({ children }) => {
                 message: `Erro ao adquirir a lista de usuários.`,
                 primaryButtonText: 'OK',
                 primaryButtonLink: '/lista',
-                // secundaryButtonText: false,
-                // secondaryButtonLink: false
             }
             console.error("Erro ao adquirir a lista de usuários. ", err);
             openModal(modalData);
             setUserList([{name: false}]);
             handleFilterUser();
-
         }
     };
 
@@ -128,7 +111,6 @@ export const UserContextProvider = ({ children }) => {
                 primaryButtonLink: '/lista',
             }
             openModal(modalData)
-
         } catch(e) {
             const modalData = {
                 message: `Erro ao atualizar o usuário.`,
@@ -142,10 +124,6 @@ export const UserContextProvider = ({ children }) => {
     const deleteUser = async (user) => {
         let modalData = {
             message: `Carregando...`,
-            // primaryButtonText: false,
-            // primaryButtonLink: false,
-            // secundaryButtonText: false,
-            // secondaryButtonLink: false
         };
         openModal(modalData);
 
@@ -154,8 +132,6 @@ export const UserContextProvider = ({ children }) => {
                 message: `Usuário ${user.name} excluído com sucesso!`,
                 primaryButtonText: "OK",
                 primaryButtonLink: "/lista",
-                // secundaryButtonText: false,
-                // secondaryButtonLink: false
             };
             await api.delete(`http://localhost:8080/users/${user._id}`);
             await getUsers();
@@ -167,8 +143,6 @@ export const UserContextProvider = ({ children }) => {
                 message: `Erro ao excluir o usuário ${user.name}.`,
                 primaryButtonText: "OK",
                 primaryButtonLink: "/lista",
-                // secundaryButtonText: false,
-                // secondaryButtonLink: false
             };
             console.log("Erro ao excluir usuário!");
         }
