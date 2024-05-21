@@ -46,9 +46,6 @@ const LiStyle = styled.li`
         display: block;
     }
 
-    /* background-color: yellow; */
-
-
     &:hover {
         border-color: ${props => props.theme.colors.gray};
         border-left-color: ${props => props.theme.colors.blueHover};
@@ -61,7 +58,6 @@ const PStyle = styled.p`
     text-overflow: ellipsis;
     font-size: ${props => props.theme.spacing.xm};
     
-    /* background-color: blue; */
     &:hover {
         overflow-x: auto;
     }
@@ -74,12 +70,12 @@ const TextStyle = styled.p`
     align-self: center;
 `
 
-
 export const List = ({ list, style }) => {
-    
+
     return (
             <UlStyle style={style} >{
-                list[0] ? [...list].reverse().map((user, index) => { 
+                list[0] ? 
+                [...list].reverse().map((user, index) => { 
                     return( 
                             <LiStyle key={index} _id={user._id}>
                                 <PStyle>{ user.name }</PStyle>

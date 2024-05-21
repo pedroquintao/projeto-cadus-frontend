@@ -81,34 +81,34 @@ export const Modal = ({children, $fontSize}) => {
     const { updateUserInput, handleUpdateInputChange, updateUser} = useContext(UserContext);
 
     return (
-    <>
-        <ModalBoxStyle>
-            <CloseButtonStyle onClick={closeModal}>
-                &times;
-            </CloseButtonStyle>
-            <TextAreaStyle $fontSize={$fontSize}>
-                { children }
-            </TextAreaStyle>
-            <ButtonAreaStyle>
-                {modalData.primaryButtonText &&
-                    <Link to={modalData.primaryButtonLink}>
-                        <Button onClick={closeModal} >{modalData.primaryButtonText}</Button>
-                    </Link>}
-                {modalData.secundaryButtonText && 
-                    <Link to={modalData.secundaryButtonLink}>
-                        <Button onClick={closeModal} $secundary={'true'}>{modalData.secundaryButtonText}</Button>
-                    </Link>}
-                {modalData.updateButtonText && 
-                    <>
-                        <Input onChange={handleUpdateInputChange} value={updateUserInput}/>
-                        <Link to={modalData.updateButtonLink}>
-                            <Button onClick={() => {console.log('ID: ',modalData.user._id); updateUser(modalData.user)}} $secundary={'true'}>{modalData.updateButtonText}</Button>
-                        </Link>
-                    </>
-                }
+        <>
+            <ModalBoxStyle>
+                <CloseButtonStyle onClick={closeModal}>
+                    &times;
+                </CloseButtonStyle>
+                <TextAreaStyle $fontSize={$fontSize}>
+                    { children }
+                </TextAreaStyle>
+                <ButtonAreaStyle>
+                    {modalData.primaryButtonText &&
+                        <Link to={modalData.primaryButtonLink}>
+                            <Button onClick={closeModal} >{modalData.primaryButtonText}</Button>
+                        </Link>}
+                    {modalData.secundaryButtonText && 
+                        <Link to={modalData.secundaryButtonLink}>
+                            <Button onClick={closeModal} $secundary={'true'}>{modalData.secundaryButtonText}</Button>
+                        </Link>}
+                    {modalData.updateButtonText && 
+                        <>
+                            <Input onChange={handleUpdateInputChange} value={updateUserInput}/>
+                            <Link to={modalData.updateButtonLink}>
+                                <Button onClick={() => {console.log('ID: ',modalData.user._id); updateUser(modalData.user)}} $secundary={'true'}>{modalData.updateButtonText}</Button>
+                            </Link>
+                        </>
+                    }
                 </ButtonAreaStyle>
-        </ModalBoxStyle>
-        <BackdropStyle onClick={closeModal} />
-    </>
+            </ModalBoxStyle>
+            <BackdropStyle onClick={closeModal} />
+        </>
     )    
 }

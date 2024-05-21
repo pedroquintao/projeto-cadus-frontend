@@ -3,12 +3,9 @@ import styled from "styled-components"
 import { UserContext } from "../../contexts/UserContext"
 import { ModalContext } from "../../contexts/ModalContext"
 import { FaEdit, FaTrashAlt, FaEllipsisH  } from "react-icons/fa";
-import { GoKebabHorizontal } from "react-icons/go";
-
 
 const DivStyle = styled.div`
     display: flex;
-    /* background-color: red; */
     justify-content: center;
     align-items: center;
     min-height: 100%;
@@ -20,9 +17,7 @@ const KebabBtnStyle = styled.button`
     display: block;
     background-color: transparent;
     border: none;
-    color: ${props => props.theme.colors.darkGray}
-    /* background-color: purple; */
-
+    color: ${props => props.theme.colors.darkGray};
 `
 
 const ActionButton = styled.button`
